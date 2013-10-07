@@ -3,6 +3,9 @@ class fundamentals::master ( $classes = [] ) {
   if versioncmp($::pe_version, '3.0.0') >= 0 {
     class { 'fundamentals::master::console': }
   }
+
+  include fundamentals::master::default_group_update
+
   File {
     owner => 'root',
     group => 'root',
